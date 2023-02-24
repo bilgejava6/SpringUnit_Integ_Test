@@ -5,6 +5,7 @@ import com.muhammet.springunit_integ_test.repository.entity.Musteri;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,5 +26,9 @@ public class MusteriService {
 
     public boolean findByMusteriId(Long id){
         return repository.existsById(id);
+    }
+
+    public List<Musteri> findAll() {
+        return repository.findAll();
     }
 }
